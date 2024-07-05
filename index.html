@@ -2,34 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>skull</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <title>Sunil designs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway:500.700'>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <!-- partial:index.partial.html -->
-    <script type="x-shader/x-vertex" id="vertexshader">
-        attribute float size; attribute vec3 color; attribute float fade; varying vec3 vColor; void main() { vColor = color; vec4 mvPosition = modelViewMatrix * vec4(position, 1.0); gl_PointSize = size; gl_Position = projectionMatrix * mvPosition; }
-    </script>
+  <!-- partial:index.partial.html -->
+  <h1 class="title">Hover over the cards</h1>
 
-    <script type="x-shader/x-fragment" id="fragmentshader">
-        uniform sampler2D pointTexture; varying vec3 vColor; void main() { gl_FragColor = vec4(vColor, 1.0); gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord); }
-    </script>
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js'></script>
-    <script src='https://assets.codepen.io/127738/MeshSurfaceSampler_20210711.js'></script>
-    <script src='https://assets.codepen.io/127738/OBJLoader_20210711.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/controls/TrackballControls.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/EffectComposer.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/RenderPass.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/UnrealBloomPass.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/shaders/LuminosityHighPassShader.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/shaders/CopyShader.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/ShaderPass.js'></script>
-    <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
-    <script src="./script.js"></script>
+  <div id="app" class="container">
+    <a href="/1">
+      <card
+        data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+        <h1 slot="header">Canyons</h1>
+        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </card>
+    </a>
+
+    <a href="#">
+      <card
+        data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+        <h1 slot="header">Beaches</h1>
+        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </card>
+    </a>
+
+    <a href="#">
+      <card
+        data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+        <h1 slot="header">Trees</h1>
+        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </card>
+    </a>
+
+    <a href="#">
+      <card
+        data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+        <h1 slot="header">Lakes</h1>
+        <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </card>
+    </a>
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+  <script src="./script.js"></script>
 
 </body>
 
